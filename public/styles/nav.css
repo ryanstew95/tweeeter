@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  line-height: 120px;
+}
+
+#logo {
+  font-family: Bungee;
+  margin-right: auto;
+}
+
+#icon {
+  position: absolute;
+  top: 88px;
+  left: 1335px;
+}
+
+.bold {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: bold;
+}
+
+
+
