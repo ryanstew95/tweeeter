@@ -9,16 +9,18 @@ header {
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
 }
 #photo {
- margin-bottom: -40px;
  height: 200px;
+ margin-bottom: -20px;
 }
 
 #name {
   text-align: center;
+  margin-bottom: -10px;
   
 }
 
 #last-name {
   font-weight: 400;
 }
+
 

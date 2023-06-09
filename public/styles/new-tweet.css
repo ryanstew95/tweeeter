@@ -50,3 +50,13 @@ button {
   font-family: 'Bungee', sans-serif;
   float: right;
 }
+
+#char-count {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+.negative-count {
+  color: red;
+}
