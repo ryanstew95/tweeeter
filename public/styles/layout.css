@@ -21,6 +21,15 @@ body {
   font-family: 'Source Sans 3', sans-serif;
 }
 
+main {
+  padding-left: 9rem;
+  padding-right: 9rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: #f4f1ec;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

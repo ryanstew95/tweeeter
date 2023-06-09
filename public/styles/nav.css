@@ -8,6 +8,7 @@ nav {
   color: #FFFFFF;
   padding: 0 1.5em;
   line-height: 120px;
+  position: fixed;
 }
 
 #logo {
