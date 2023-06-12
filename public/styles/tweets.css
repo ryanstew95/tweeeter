@@ -1,0 +1,17 @@
+#jacobs {
+  font-weight: lighter;
+}
+#tag {
+  color: grey;
+  opacity: 0.5;
+}
+
+#share {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#my-textarea {
+  font-size: 20px;
+  line-height: 1.5;
+}

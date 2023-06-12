@@ -54,9 +54,21 @@ button {
 #char-count {
   display: flex;
   justify-content: flex-end;
-  font-weight: bold;
+  font-family: 'Bungee', sans-serif;
 }
 
 .negative-count {
   color: red;
 }
+
+label {
+  font-weight: bold;
+}
+
+#my-textarea {
+  /* outline: none; */
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid black;
+}
+

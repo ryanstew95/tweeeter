@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -55,16 +56,23 @@
         <h2>Compose Tweet</h2>
         <form>
           <label for="tweet-text">What are you humming about?</label>
-          <textarea id="my-textarea" rows="4" cols="50"></textarea>
-          <span id="char-count">140</span>
-          
+        <textarea id="my-textarea" rows="4" cols="50"></textarea>
+        <span id="char-count">140</span>
           <div>
             <form action="/tweets/" method="POST">
-
             <button type="submit">Tweet</button>
-
-
           </div>
+        </form>
+      </section>
+    </main>
+    <main class="container2">
+      <section class="jacobs-tweet">
+        <form>
+          <label id="jacobs" for="name">Rhoda Jacobs</label>
+          <label id="tag" for="tag">@Mrs.Jacobs</label>
+          <div id="my-textarea">Hello World!</div>
+
+          <div>10 days ago</div>
         </form>
       </section>
     </main>
