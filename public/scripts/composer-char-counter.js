@@ -1,6 +1,3 @@
-console.log("character counter has loaded!");
-console.log("jQuery:", jQuery);
-
 $(document).ready(function() {
   $('#my-textarea').on('input', function() {
     const text = $(this).val();

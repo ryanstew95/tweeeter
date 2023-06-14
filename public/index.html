@@ -52,20 +52,20 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
-          <label for="tweet-text">What are you humming about?</label>
-        <textarea id="my-textarea" rows="4" cols="50"></textarea>
+        <form id="new-tweet">
+        <textarea id="my-textarea" name="text" rows="4" cols="50" placeholder="What are you humming about?"></textarea>
         <span id="char-count">140</span>
           <div>
-            <form action="/tweets/" method="POST">
+            <!-- <form action="/tweets/" method="POST"> -->
             <button type="submit">Tweet</button>
           </div>
+          <div id="error-message" style="display: none;"></div>
         </form>
       </section>
     </main>
-    <section class="tweet-history" id="tweets-container"> </section>
+    <section class="tweet-history" id="tweets-container"></section>
   </body>
 </html>
