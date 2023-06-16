@@ -95,10 +95,8 @@ $(document).ready(function() {
       .done(function(response) {
       // Handle the success response from the server
         console.log(response);
-      // Update the UI or perform any other actions
-      
-      // grab latest tweetdata
-      // and display it
+        // Update the UI or perform any other actions
+
       })
       .fail(function(error) {
       // Handle the error response from the server
