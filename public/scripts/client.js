@@ -42,6 +42,10 @@ $(document).ready(function() {
       $('#tweets-container').append($tweet);
     });
   };
+  const displayLatestTweet = (tweetData) => {
+    const $tweet = createTweetElement(tweetData);
+    $('#tweets-container').prepend($tweet);
+  };
 
   const loadTweets = () => {
     $.ajax({
@@ -50,6 +54,26 @@ $(document).ready(function() {
       dataType: 'json',
       success: (tweets) => {
         renderTweets(tweets);
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+  };
+
+  // New function to load new tweets without refreshing the page
+  const loadNewTweets = () => {
+    const lastTweetTimestamp = $('.tweet-timestamp').first().data('timestamp');
+
+    $.ajax({
+      url: '/tweets/',
+      method: 'GET',
+      dataType: 'json',
+      data: { timestamp: lastTweetTimestamp },
+      success: (newTweets) => {
+        newTweets.forEach(tweetData => {
+          displayLatestTweet(tweetData);
+        });
       },
       error: (error) => {
         console.error(error);
@@ -96,7 +120,7 @@ $(document).ready(function() {
       // Handle the success response from the server
         console.log(response);
         // Update the UI or perform any other actions
-
+        loadNewTweets();
       })
       .fail(function(error) {
       // Handle the error response from the server
