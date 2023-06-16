@@ -7,25 +7,25 @@ $(document).ready(function() {
     // Create the HTML structure for the tweet using template literals
     let $tweet = $(`
     <article class="tweet">
-      <header>
-        <div class="user-info">
-          <img src="${user.avatars}" alt="User Avatar">
-          <h3 class="user-name">${user.name}</h3>
-        </div>
-        <span class="user-handle">${user.handle}</span>
-      </header>
-      <div class="tweet-content">
-        <p>${content.text}</p>
+    <header>
+      <div class="user-info">
+        <img src="${user.avatars}" alt="User Avatar">
+        <h3 class="user-name">${$("<div>").text(user.name).html()}</h3>
       </div>
-      <footer>
-        <span class="tweet-timestamp">${timeago.format(created_at)}</span>
-        <div class="tweet-actions">
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </div>
-      </footer>
-    </article>
+      <span class="user-handle">${$("<div>").text(user.handle).html()}</span>
+    </header>
+    <div class="tweet-content">
+      <p>${$("<div>").text(content.text).html()}</p>
+    </div>
+    <footer>
+      <span class="tweet-timestamp">${timeago.format(created_at)}</span>
+      <div class="tweet-actions">
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </div>
+    </footer>
+  </article>
   `);
 
   
@@ -125,7 +125,7 @@ $(document).ready(function() {
         // clear the textarea after successful submission
         $('#my-textarea').val('');
       })
-      
+
       .fail(function(error) {
       // Handle the error response from the server
         console.error(error);
