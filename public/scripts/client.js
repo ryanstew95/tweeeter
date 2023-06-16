@@ -121,7 +121,11 @@ $(document).ready(function() {
         console.log(response);
         // Update the UI or perform any other actions
         loadNewTweets();
+
+        // clear the textarea after successful submission
+        $('#my-textarea').val('');
       })
+      
       .fail(function(error) {
       // Handle the error response from the server
         console.error(error);
