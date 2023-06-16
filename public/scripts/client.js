@@ -41,7 +41,7 @@ $(document).ready(function() {
       $tweet = createTweetElement(tweetData);
       $('#tweets-container').append($tweet);
     });
-  }
+  };
 
   const loadTweets = () => {
     $.ajax({
@@ -89,12 +89,16 @@ $(document).ready(function() {
       
       method: 'POST',
       url: '/tweets',
-      data: tweetText
+      data: { text: tweetText }
     })
+
       .done(function(response) {
       // Handle the success response from the server
         console.log(response);
       // Update the UI or perform any other actions
+      
+      // grab latest tweetdata
+      // and display it
       })
       .fail(function(error) {
       // Handle the error response from the server
