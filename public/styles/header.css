@@ -4,7 +4,8 @@ header {
   background-color: orange;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 120px;
   justify-content: center;
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
 }
@@ -15,6 +16,7 @@ header {
 
 #name {
   text-align: center;
+  padding-left: 35px;
   margin-bottom: -10px;
   
 }
@@ -22,5 +24,7 @@ header {
 #last-name {
   font-weight: 400;
 }
+
+
 
 

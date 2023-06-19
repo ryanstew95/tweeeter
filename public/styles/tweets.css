@@ -1,17 +1,17 @@
 .tweet-history {
-display: flex;
-margin-top: 1rem;
-align-content: stretch;
-justify-content: center;
-flex-wrap: nowrap;
-flex-direction: column;
-align-items: stretch;
+  display: flex;
+  margin-top: 1rem;
+  align-content: stretch;
+  justify-content: center;
+  flex-wrap: wrap; 
+  flex-direction: row; 
+  align-items: stretch;
 }
 
 .tweet {
-width: 80%;
-margin: 1em;
-border: 5px solid #545149;
+  width: 40%; 
+  margin: 1em;
+  border: 5px solid #545149;
 }
 
 .tweet:hover {
@@ -19,13 +19,13 @@ box-shadow: 5px 10px #524848;
 }
 
 .th-header {
-display: flex;
-margin: 1rem;
-width: 90%;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-between;
-align-content: stretch;
+  display: flex;
+  margin: 1rem;
+  width: 90%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: stretch;
 }
 
 .name-left {

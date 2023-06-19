@@ -1,11 +1,16 @@
+#container {
+  display: flex;
+  justify-content: flex-end;
+}
 .new-tweet {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5em;
   margin-top: 0.5rem;
-width: auto;
-
+  width: auto;
+  top: 160px;
 }
+
 
 .new-tweet h2 {
   font-size: 3rem;
@@ -66,7 +71,6 @@ label {
 }
 
 #my-textarea {
-  /* outline: none; */
   border: none;
   background: transparent;
   border-bottom: 4px solid black;
@@ -75,9 +79,13 @@ label {
 #error-message {
   background-color: #ffcccc;
   color: #ff0000;
+  font-weight: bolder;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ff0000;
   border-radius: 5px; 
 }
+
+
+
 

@@ -1,7 +1,6 @@
-$(document).ready(function() {
-
-  const createTweetElement = function(tweetData) {
-  // Extract the necessary data from the tweetData object
+$(document).ready(function () {
+  const createTweetElement = function (tweetData) {
+    // Extract the necessary data from the tweetData object
     const { user, content, created_at } = tweetData;
 
     // Create the HTML structure for the tweet using template literals
@@ -28,109 +27,132 @@ $(document).ready(function() {
   </article>
   `);
 
-  
     return $tweet;
   };
 
-  const renderTweets = function(tweetArray) {
+  const renderTweets = function (tweetArray) {
     // Clear the existing tweets in the container
-    $('#tweets-container').empty();
+    $("#tweets-container").empty();
 
     // Iterate over the tweetArray and append each tweet to the container
-    tweetArray.forEach(tweetData => {
+    tweetArray.forEach((tweetData) => {
       $tweet = createTweetElement(tweetData);
-      $('#tweets-container').append($tweet);
+      $("#tweets-container").append($tweet);
     });
   };
   const displayLatestTweet = (tweetData) => {
     const $tweet = createTweetElement(tweetData);
-    $('#tweets-container').prepend($tweet);
+    $("#tweets-container").prepend($tweet);
   };
 
   const loadTweets = () => {
     $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json',
+      url: "/tweets",
+      method: "GET",
+      dataType: "json",
       success: (tweets) => {
         renderTweets(tweets);
       },
       error: (error) => {
         console.error(error);
-      }
+      },
     });
   };
 
   // New function to load new tweets without refreshing the page
   const loadNewTweets = () => {
-    const lastTweetTimestamp = $('.tweet-timestamp').first().data('timestamp');
+    const lastTweetTimestamp = $(".tweet-timestamp").first().data("timestamp");
 
     $.ajax({
-      url: '/tweets/',
-      method: 'GET',
-      dataType: 'json',
+      url: "/tweets/",
+      method: "GET",
+      dataType: "json",
       data: { timestamp: lastTweetTimestamp },
       success: (newTweets) => {
-        newTweets.forEach(tweetData => {
+        newTweets.forEach((tweetData) => {
           displayLatestTweet(tweetData);
         });
       },
       error: (error) => {
         console.error(error);
-      }
+      },
     });
   };
 
   loadTweets();
 
   // Add event listener for form submit
-  $('#new-tweet').on('submit', function(event) {
+  $("#new-tweet").on("submit", function (event) {
     event.preventDefault(); // Prevent default form submission behavior
-
     // Retrieve the value of the textarea
-    const tweetText = $('#my-textarea').val();
+    const tweetText = $("#my-textarea").val();
 
     // Perform form validation
-    if (tweetText.trim() === '') {
-   
-      $('#error-message').text('Tweet can\'t be empty!').show();
+    if (tweetText.trim() === "") {
+      $("#error-message")
+        .text("🚫 " + "Tweet can't be empty!" + " 🚫")
+        .show();
       return;
     }
-
-    if (tweetText.length > 140) {
-   
-      $('#error-message').text('Tweet exceeds the character limit!').show();
-      return;
-    }
-
-
 
     // Clear any existing error messages
-    $('#error-message').text('');
-    
+    $("#error-message").text("");
+
     // Send an AJAX POST request to the server
     $.ajax({
-      
-      method: 'POST',
-      url: '/tweets',
-      data: { text: tweetText }
+      method: "POST",
+      url: "/tweets",
+      data: { text: tweetText },
     })
 
-      .done(function(response) {
-      // Handle the success response from the server
+      .done(function (response) {
+        // Handle the success response from the server
         console.log(response);
         // Update the UI or perform any other actions
         loadNewTweets();
 
         // clear the textarea after successful submission
-        $('#my-textarea').val('');
+        $("#my-textarea").val("");
       })
 
-      .fail(function(error) {
-      // Handle the error response from the server
+      .fail(function (error) {
+        // Handle the error response from the server
         console.error(error);
-      // Display an error message or perform error handling
+        // Display an error message or perform error handling
+        // show the error message
+        $("#error-message")
+          .text("🚫 " + "An error occurred. Please try again." + " 🚫")
+          .show();
       });
   });
 
+  // Hiding error messages
+  let isTextareaEmpty = true;
+
+  $("#my-textarea").on("input", function(event) {
+    const tweetText = $(this).val().trim();
+
+    if (tweetText !== "" && isTextareaEmpty) {
+      isTextareaEmpty = false;
+      $("#error-message")
+        .text("🚫 " + "Tweet can't be empty!" + " 🚫").hide();
+    } else if (tweetText === "") {
+      isTextareaEmpty = true;
+    }
+  });
+  let isCharacterLimitExceeded = false;
+
+  $("#my-textarea").on("input", function(event) {
+    const tweetText = $(this).val().trim();
+
+    if (tweetText.length > 140 && !isCharacterLimitExceeded) {
+      isCharacterLimitExceeded = true;
+      // Show the error message for character limit exceeded
+      $("#error-message").text("🚫 " + "Tweet exceeds the character limit!" + " 🚫").show();
+    } else if (tweetText.length <= 140 && isCharacterLimitExceeded) {
+      isCharacterLimitExceeded = false;
+      // Hide the error message for character limit
+      $("#error-message").hide();
+    }
+  });
 });
