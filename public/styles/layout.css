@@ -16,7 +16,8 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-color: #6998f065;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
 }
