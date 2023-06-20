@@ -1,30 +1,24 @@
 header {
-  height: 500px;
+  height: 400px;
   width: 100%;
   background-color: orange;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 120px;
+  padding: 100px;
+  padding-bottom: 0.5px;
   justify-content: center;
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
 }
 #photo {
- height: 200px;
- margin-bottom: -20px;
+ height: 180px;
+ margin-bottom: -60px;
 }
 
 #name {
   text-align: center;
-  padding-left: 35px;
-  margin-bottom: -10px;
-  
 }
 
 #last-name {
   font-weight: 400;
 }
-
-
-
-

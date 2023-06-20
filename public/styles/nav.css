@@ -11,15 +11,16 @@ nav {
   position: fixed;
 }
 
+div.write-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #logo {
   font-family: Bungee;
   margin-right: auto;
-}
-
-#icon {
-
-  top: 88px;
-  left: 1335px;
 }
 
 .bold {
