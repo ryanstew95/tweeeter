@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  const createTweetElement = function (tweetData) {
+$(document).ready(function() {
+  const createTweetElement = function(tweetData) {
     // Extract the necessary data from the tweetData object
     const { user, content, created_at } = tweetData;
 
@@ -30,7 +30,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  const renderTweets = function (tweetArray) {
+  const renderTweets = function(tweetArray) {
     // Clear the existing tweets in the container
     $("#tweets-container").empty();
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
   loadTweets();
 
   // Add event listener for form submit
-  $("#new-tweet").on("submit", function (event) {
+  $("#new-tweet").on("submit", function(event) {
     event.preventDefault(); // Prevent default form submission behavior
     // Retrieve the value of the textarea
     const tweetText = $("#my-textarea").val();
@@ -105,7 +105,7 @@ $(document).ready(function () {
       data: { text: tweetText },
     })
 
-      .done(function (response) {
+      .done(function(response) {
         // Handle the success response from the server
         console.log(response);
         // Update the UI or perform any other actions
@@ -115,11 +115,10 @@ $(document).ready(function () {
         $("#my-textarea").val("");
       })
 
-      .fail(function (error) {
+      .fail(function(error) {
         // Handle the error response from the server
         console.error(error);
         // Display an error message or perform error handling
-        // show the error message
         $("#error-message")
           .text("🚫 " + "An error occurred. Please try again." + " 🚫")
           .show();

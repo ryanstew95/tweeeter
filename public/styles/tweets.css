@@ -103,7 +103,6 @@ margin-right: 1rem;
     width: 90%;
   }
   
-  /* Optional: You can adjust the width and margin for better alignment */
   .tweet:nth-child(2n) {
     margin-left: auto;
   }
