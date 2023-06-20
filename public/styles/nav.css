@@ -1,5 +1,4 @@
 nav {
-
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -18,7 +17,7 @@ nav {
 }
 
 #icon {
-  position: absolute;
+
   top: 88px;
   left: 1335px;
 }
@@ -28,5 +27,9 @@ nav {
   font-weight: bold;
 }
 
-
+@media (max-width: 500px) {
+  nav {
+    display: none;
+  }
+}
 

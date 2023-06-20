@@ -92,3 +92,20 @@ justify-content: space-between;
 width: 8vw;
 margin-right: 1rem;
 }
+
+
+@media (max-width: 666px) {
+  .tweet-history {
+    flex-direction: column;
+  }
+  
+  .tweet {
+    width: 90%;
+  }
+  
+  /* Optional: You can adjust the width and margin for better alignment */
+  .tweet:nth-child(2n) {
+    margin-left: auto;
+  }
+}
+

@@ -1,6 +1,7 @@
 #container {
   display: flex;
-  justify-content: flex;
+  justify-content: flex-start;
+ 
   background-color: #6998f065;
 }
 .new-tweet {
@@ -87,6 +88,11 @@ label {
   border-radius: 5px; 
 }
 
+@media (max-width: 500px) {
+  #container {
+    padding-left: 20px;
+  }
+}
 
 
 
