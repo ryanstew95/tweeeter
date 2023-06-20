@@ -14,6 +14,15 @@ This app was bulit with HTML, CSS, JS, jQuery and AJAX for the front-end, and No
 ## Screenshots
 
 ![image](public/images/main.png)
+Main page of app 
+![image](public/images/tweets.png)
+The tweets
+![image](public/images/error-1.png)
+Tweet can't be empty
+![image](public/images/error-2.png)
+Tweet can't exceed character limit
+![image](public/images/phone-view.png)
+The moblie view of the app
 
 ## Getting Started
 
