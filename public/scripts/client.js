@@ -139,19 +139,23 @@ $(document).ready(function() {
       isTextareaEmpty = true;
     }
   });
-  let isCharacterLimitExceeded = false;
-
+  
   $("#my-textarea").on("input", function(event) {
     const tweetText = $(this).val().trim();
-
-    if (tweetText.length > 140 && !isCharacterLimitExceeded) {
-      isCharacterLimitExceeded = true;
+    const tweetLength = tweetText.length;
+    const isCharacterLimitExceeded = tweetLength > 140;
+  
+    if (isCharacterLimitExceeded) {
+      // Disable the submit button
+      $("#submit-button").prop("disabled", true);
       // Show the error message for character limit exceeded
-      $("#error-message").text("🚫 " + "Tweet exceeds the character limit!" + " 🚫").show();
-    } else if (tweetText.length <= 140 && isCharacterLimitExceeded) {
-      isCharacterLimitExceeded = false;
+      $("#error-message").text("🚫 Tweet exceeds the character limit! 🚫").show();
+    } else {
+      // Enable the submit button
+      $("#submit-button").prop("disabled", false);
       // Hide the error message for character limit
       $("#error-message").hide();
     }
   });
+  
 });
