@@ -1,26 +1,27 @@
+@import '_variables';
 nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 120px;
   width: 100%;
-  background-color: #3fa36b;
-  color: #FFFFFF;
+  background-color: $primary;
+  color: $white;
   padding: 0 1.5em;
   line-height: 120px;
   position: fixed;
-}
 
-div.write-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+  #logo {
+    font-family: $big-font;
+    margin-right: auto;
+  }
 
-#logo {
-  font-family: Bungee;
-  margin-right: auto;
+  div.write-tweet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .bold {

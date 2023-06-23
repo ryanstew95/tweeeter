@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -10,15 +11,17 @@ nav {
   line-height: 120px;
   position: fixed;
 }
-nav #logo {
-  font-family: Bungee;
-  margin-right: auto;
-}
-nav div.write-tweet {
+
+div.write-tweet {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+#logo {
+  font-family: Bungee;
+  margin-right: auto;
 }
 
 .bold {
