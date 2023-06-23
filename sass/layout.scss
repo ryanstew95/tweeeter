@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,12 +13,13 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-color: rgba(105, 152, 240, 0.3960784314);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-color: #6998f065;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 main {
@@ -30,6 +30,8 @@ main {
   align-items: center;
   background-color: #f4f1ec;
 }
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

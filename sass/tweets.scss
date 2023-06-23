@@ -3,19 +3,19 @@
   margin-top: 1rem;
   align-content: stretch;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-wrap: wrap; 
+  flex-direction: row; 
   align-items: stretch;
 }
 
 .tweet {
-  width: 40%;
+  width: 40%; 
   margin: 1em;
   border: 5px solid #545149;
 }
 
 .tweet:hover {
-  box-shadow: 5px 10px #524848;
+box-shadow: 5px 10px #524848;
 }
 
 .th-header {
@@ -29,75 +29,78 @@
 }
 
 .name-left {
-  display: flex;
+display: flex;
 }
 
 .name-left h3 {
-  margin-left: 2rem;
+margin-left: 2rem;
 }
 
 .th-header h3 {
-  font-weight: 300;
+font-weight: 300;
 }
 
 .th-header img {
-  max-height: 4rem;
-  max-width: 4rem;
+max-height: 4rem;
+max-width: 4rem;
 }
 
 .display-tweet {
-  margin: 1em;
-  border-style: hidden;
-  border-bottom: 5px solid #545149;
-  font-weight: 300;
-  line-height: 1;
-  word-wrap: break-word;
+margin: 1em;
+border-style: hidden;
+border-bottom: 5px solid #545149;
+font-weight: 300;
+line-height: 1;
+word-wrap: break-word;
 }
 
 #userID {
-  opacity: 0.5;
+opacity: 0.5;
 }
 
 .tweet:hover #userID {
-  opacity: 1;
-  font-weight: bold;
+opacity: 1;
+font-weight: bold;
 }
 
 #heart:hover {
-  color: goldenrod;
+color: goldenrod;
 }
 
 #retweet:hover {
-  color: goldenrod;
+color: goldenrod;
 }
 
 #flag:hover {
-  color: goldenrod;
+color: goldenrod;
 }
 
 .tweet-history footer {
-  margin: 1em;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: stretch;
+margin: 1em;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: center;
+align-items: stretch;
 }
 
 .icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 8vw;
-  margin-right: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 8vw;
+margin-right: 1rem;
 }
+
 
 @media (max-width: 1024px) {
   .tweet-history {
     flex-direction: column;
   }
+  
   .tweet {
     width: 90%;
   }
 }
+
