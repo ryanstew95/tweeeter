@@ -37,12 +37,8 @@ $(document).ready(function() {
     // Iterate over the tweetArray and append each tweet to the container
     tweetArray.forEach((tweetData) => {
       $tweet = createTweetElement(tweetData);
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").prepend($tweet);
     });
-  };
-  const displayLatestTweet = (tweetData) => {
-    const $tweet = createTweetElement(tweetData);
-    $("#tweets-container").prepend($tweet);
   };
 
   const loadTweets = () => {
@@ -52,26 +48,6 @@ $(document).ready(function() {
       dataType: "json",
       success: (tweets) => {
         renderTweets(tweets);
-      },
-      error: (error) => {
-        console.error(error);
-      },
-    });
-  };
-
-  // New function to load new tweets without refreshing the page
-  const loadNewTweets = () => {
-    const lastTweetTimestamp = $(".tweet-timestamp").first().data("timestamp");
-
-    $.ajax({
-      url: "/tweets/",
-      method: "GET",
-      dataType: "json",
-      data: { timestamp: lastTweetTimestamp },
-      success: (newTweets) => {
-        newTweets.forEach((tweetData) => {
-          displayLatestTweet(tweetData);
-        });
       },
       error: (error) => {
         console.error(error);
@@ -95,8 +71,15 @@ $(document).ready(function() {
       return;
     }
 
+    if (tweetText.trim().length > 140) {
+      $("#error-message")
+        .text("🚫 " + "Tweet exceeds the character limit!" + " 🚫")
+        .show();
+      return;
+    }
+
     // Clear any existing error messages
-    $("#error-message").text("");
+    $("#error-message").text("").hide();
 
     // Send an AJAX POST request to the server
     $.ajax({
@@ -109,7 +92,7 @@ $(document).ready(function() {
         // Handle the success response from the server
         console.log(response);
         // Update the UI or perform any other actions
-        loadNewTweets();
+        loadTweets();
 
         // clear the textarea after successful submission
         $("#my-textarea").val("");
@@ -124,38 +107,4 @@ $(document).ready(function() {
           .show();
       });
   });
-
-  // Hiding error messages
-  let isTextareaEmpty = true;
-
-  $("#my-textarea").on("input", function(event) {
-    const tweetText = $(this).val().trim();
-
-    if (tweetText !== "" && isTextareaEmpty) {
-      isTextareaEmpty = false;
-      $("#error-message")
-        .text("🚫 " + "Tweet can't be empty!" + " 🚫").hide();
-    } else if (tweetText === "") {
-      isTextareaEmpty = true;
-    }
-  });
-  
-  $("#my-textarea").on("input", function(event) {
-    const tweetText = $(this).val().trim();
-    const tweetLength = tweetText.length;
-    const isCharacterLimitExceeded = tweetLength > 140;
-  
-    if (isCharacterLimitExceeded) {
-      // Disable the submit button
-      $("#submit-button").prop("disabled", true);
-      // Show the error message for character limit exceeded
-      $("#error-message").text("🚫 Tweet exceeds the character limit! 🚫").show();
-    } else {
-      // Enable the submit button
-      $("#submit-button").prop("disabled", false);
-      // Hide the error message for character limit
-      $("#error-message").hide();
-    }
-  });
-  
 });

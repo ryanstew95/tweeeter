@@ -102,9 +102,5 @@ margin-right: 1rem;
   .tweet {
     width: 90%;
   }
-  
-  .tweet:nth-child(2n) {
-    margin-left: auto;
-  }
 }
 
