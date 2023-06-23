@@ -23,12 +23,3 @@ header {
 #last-name {
   font-weight: 400;
 }
-
-header {
-  height: 400px;
-}
-header #photo {
-  display: flex;
-  align-items: middle;
-  justify-content: center;
-}

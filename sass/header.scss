@@ -22,3 +22,18 @@ header {
 #last-name {
   font-weight: 400;
 }
+
+@mixin vertical-align($alignment: center) {
+  display: flex;
+  align-items: $alignment;
+  justify-content: center;
+}
+
+header {
+  height: 400px;
+  
+  #photo {
+    @include vertical-align(middle);
+  }
+}
+
